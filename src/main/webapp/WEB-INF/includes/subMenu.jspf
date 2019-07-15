@@ -1,0 +1,25 @@
+<%@page import="org.apache.jasper.tagplugins.jstl.core.ForEach"%>
+<%@page import="java.util.Vector"%>
+<%@page import="beans.MenuSubFamiliaBean"%>
+<%@page import="clases.SubFamilia"%>
+<ul>
+<% 
+
+Vector<MenuSubFamiliaBean> menuSubFamilia = (Vector<MenuSubFamiliaBean>)request.getAttribute("menuSubFamilia");
+for (MenuSubFamiliaBean nomSubFamilia : menuSubFamilia) {
+	if(nomSubFamilia.getNom_sub().equalsIgnoreCase((String)request.getAttribute("subfamiliaSeleccionada"))){
+		%>
+		<li><a id="subFamiliaSeleccionado" class="sub_familia" href="<%=application.getContextPath()%>/<%= (String)request.getAttribute("familiaSeleccionada") %>/<%= nomSubFamilia.getNom_sub() %>">
+			<img src="<%=application.getContextPath()%>/imagenes_subfamilia/<%= nomSubFamilia.getImg_sub() %>.png">
+		</a></li>
+		<%
+	}else{
+   		%>
+		<li><a class="sub_familia" href="<%=application.getContextPath()%>/<%= (String)request.getAttribute("familiaSeleccionada") %>/<%= nomSubFamilia.getNom_sub() %>">
+			<img src="<%=application.getContextPath()%>/imagenes_subfamilia/<%= nomSubFamilia.getImg_sub() %>.png">
+		</a></li>
+   		<%
+	}
+   } 
+%>
+</ul>

@@ -1,0 +1,21 @@
+<div id="footer">
+	<div id="logos">
+		<img border='0' src='<%= application.getContextPath() %>/images/logoBlanco.png'/>
+		<div id="links"><a href="<%= application.getContextPath() %>/documentacion">Documentacion</a> | <a href="<%= application.getContextPath() %>/admin">Admin</a></div>
+	</div>
+	<div id="copy">
+		Proyecto Final &copy; 2014
+	</div>
+	<div id="redes">
+		<!-- www.cssplantillas.es.tl -->
+		<div class='social-icons' id='social-iconos'>
+			<ul>
+				<li class='social_icon'><a href='#'><img border='0' src='<%= application.getContextPath() %>/images/sfacp.png'/></a></li>
+				<li class='social_icon'><a href='#'><img border='0' src='<%= application.getContextPath() %>/images/stwcp.png'/></a></li>
+				<li class='social_icon'><a href='#'><img border='0' src='<%= application.getContextPath() %>/images/sgocp.png'/></a></li>
+				<li class='social_icon'><a href='#'><img border='0' src='<%= application.getContextPath() %>/images/srscp.png'/></a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="clear"></div>
+</div>

@@ -1,0 +1,44 @@
+<%
+	if (request.getAttribute("mensaje") == null) {
+%>
+<table id="tableLeft">
+	<tr><td>Usuario: </td><td><input maxlength="20" type="text" name="NOM_USER"></td></tr>
+	<tr><td>Contraseña: </td><td><input maxlength="20"  type="password" name="PASS"></td></tr>
+	<tr><td>Repita: </td><td><input maxlength="20"  type="password" name="PASS_R"></td></tr>
+	<tr><td>Nombre: </td><td><input  maxlength="20" type="text" name="NOMBRE"></td></tr>
+	<tr><td>Apellidos: </td><td><input maxlength="45" type="text" name="APELLIDOS"></td></tr>
+	<tr><td>Dirección</td><td><input maxlength="145" type="text" name="DIRECCION"></td></tr>
+</table>
+<table id="tableRight">
+	<tr><td>Número</td><td><input maxlength="3" type="text" name="NUMERO"></td></tr>
+	<tr><td>Piso</td><td><input maxlength="2" type="text" name="PISO"></td></tr>
+	<tr><td>Letra</td><td><input maxlength="2" type="text" name="LETRA"></td></tr>
+	<tr><td>Esc</td><td><input maxlength="9" type="text" name="ESCALERA"></td></tr>
+	<tr><td>Codigo Postal</td><td><input maxlength="5" type="text" name="COD_POSTAL"></td></tr>
+	<tr><td>Telefono</td><td><input maxlength="9" type="text" name="TELEFONO"></td></tr>
+	<tr><td></td><td><input type="submit" value="Registro"></td></tr>
+</table>
+
+<%
+	} else {
+%>
+<table id="tableLeft">
+	<tr><td>Usuario: </td><td><input maxlength="20" type="text" name="NOM_USER" <%= (request.getParameter("NOM_USER")!=null) ? request.getParameter("NOM_USER") : "" %>"></td></tr>
+	<tr><td>Contraseña: </td><td><input maxlength="20" type="password" name="PASS"></td></tr>
+	<tr><td>Repita: </td><td><input maxlength="20" type="password" name="PASS_R"></td></tr>
+	<tr><td>Nombre: </td><td><input maxlength="20" type="text" name="NOMBRE" value="<%=(request.getParameter("NOMBRE") != null) ? request.getParameter("NOMBRE") : "" %>"></td></tr>
+	<tr><td>Apellidos: </td><td><input maxlength="45" type="text" name="APELLIDOS" value="<%=(request.getParameter("APELLIDOS") != null) ? request.getParameter("APELLIDOS") : "" %>"></td></tr>
+	<tr><td>Dirección</td><td><input maxlength="145" type="text" name="DIRECCION" value="<%= (request.getParameter("DIRECCION") != null) ? request.getParameter("DIRECCION") : "" %>"></td></tr>
+</table>
+<table id="tableRight">
+	<tr><td>Número</td><td><input maxlength="3" type="text" name="NUMERO" value="<%= (request.getParameter("NUMERO") != null) ? request.getParameter("NUMERO") : "" %>"></td></tr>
+	<tr><td>Piso</td><td><input maxlength="2" type="text" name="PISO" value="<%= (request.getParameter("PISO") != null) ? request.getParameter("PISO") : "" %>"></td></tr>
+	<tr><td>Letra</td><td><input maxlength="2" type="text" name="LETRA" value="<%= (request.getParameter("LETRA") != null) ? request.getParameter("LETRA") : "" %>"></td></tr>
+	<tr><td>Esc</td><td><input maxlength="9" type="text" name="ESCALERA" value="<%= (request.getParameter("ESCALERA") != null) ? request.getParameter("ESCALERA") : "" %>"></td></tr>
+	<tr><td>Codigo Postal</td><td><input maxlength="5" type="text" name="COD_POSTAL" value="<%= (request.getParameter("COD_POSTAL") != null) ? request.getParameter("COD_POSTAL") : "" %>"></td></tr>
+	<tr><td>Telefono</td><td><input maxlength="9" type="text" name="TELEFONO" value="<%= (request.getParameter("TELEFONO") != null) ? request.getParameter("TELEFONO") : ""%>"></td></tr>
+	<tr><td></td><td><input type="submit" value="Registro"></td>
+</table>
+<%
+	}
+%>

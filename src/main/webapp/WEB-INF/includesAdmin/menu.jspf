@@ -1,0 +1,29 @@
+<%@page import="java.util.Vector"%>
+<%@page import="beans.PaginaAdminBean" %>
+<%@page import="clasesAdmin.PaginaAdministracion" %>
+
+<%
+Vector<PaginaAdminBean> paginasAdministracion = PaginaAdministracion.getPaginasAdministracion();
+String paginaSeleccionada = "/admin/" + (String)request.getAttribute("pagina"); 
+%>
+<ul>
+<%
+for(PaginaAdminBean pagina: paginasAdministracion){
+	if(pagina.getPath().equals(paginaSeleccionada)){
+		%><li><a id="seleccionado" href="<%= request.getContextPath()+ "" + pagina.getPath() %>"><%= pagina.getOpcion() %></a></li><%
+	}else{
+		%><li><a href="<%= request.getContextPath()+ "" + pagina.getPath() %>"><%= pagina.getOpcion() %></a></li><%
+	}
+}
+%>
+</ul>
+
+<!--  
+<ul>
+	<li><a href="ControlReparto.jsp">Control Reparto</a></li>
+	<li><a href="OpcionMenu?opcionMenu=liquidacion">Liquidacion</a></li>
+	<li><a href="OpcionMenu?opcionMenu=ListarReparto">Listar Reparto</a></li>
+	<li><a href="OpcionMenu?opcionMenu=Incidencias">Incidencias</a></li>
+	<li><a href="#">Balance</a></li>
+</ul>
+-->

@@ -1,0 +1,23 @@
+
+<%
+	if(session.getAttribute("CLIENTE")== null){
+%>
+	<div id="divRegistro">
+		<form method="POST" action="<%= application.getContextPath() + request.getAttribute("requestPage")%>">
+			<input type="hidden" name="accion" value="conectar">
+			<ul>
+				<li><input name="NOM_USER" type="text" placeholder="Usuario"></li>
+				<li><input name="PASS" type="password" placeholder="Contraseña"></li>
+				<li><input type="submit" class="botonVerdePeque" value="Conectar"></li>
+			</ul>
+		</form>
+		<form method="POST" action=" <%= application.getContextPath() %>/registro">
+			<input type="submit" class="botonVerdePeque" value="Registrarse">
+		</form>
+	</div>
+	<%	
+	}else{%>
+		<h2><%= session.getAttribute("USUARIO") %></h2>
+<%
+	}	
+%>

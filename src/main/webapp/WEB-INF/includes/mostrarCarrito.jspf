@@ -1,0 +1,39 @@
+<%@page import="org.apache.jasper.tagplugins.jstl.core.ForEach"%>
+<%@page import="java.util.Vector"%>
+<%@page import="beans.ProductoBean"%>
+<%@page import="clases.Lin_Ped" %>
+
+<table>
+	<tr><th>Articulo</th><th></th><th>Precio</th><th>Uds</th><th>Total</th></tr>
+<%
+	Vector<Lin_Ped> carrito = (Vector<Lin_Ped>)session.getAttribute("CARRITO");
+	float total = 0;
+	if(carrito.size()>0){
+		for(Lin_Ped articulo : carrito){	
+			total += articulo.getCantidadProducto() * articulo.getProducto().getPrecio();
+			%>
+			<tr>
+			<form method="POST" action="<%= application.getContextPath() + request.getAttribute("requestPage")%>">
+				<td class="textLeft"><img width="75" height="38" src="<%= application.getContextPath() + "/imagenes_productos/" + articulo.getProducto().getUrl_foto() + ".jpg"%>"></td>
+				<td><input class="removeProduct" type="submit" value=""></td>
+				<td><%= articulo.getProducto().getPrecio() %> &euro;</td>
+				<td><%= articulo.getCantidadProducto() %></td>
+				<td><%= (double)Math.round(articulo.getCantidadProducto() * articulo.getProducto().getPrecio()*100)/100  %> &euro;</td>
+				<input type="hidden" value="removeProduct" name="accion">
+				<input type="hidden" name="cod_pro" value="<%= articulo.getProducto().getCod_pro() %>">
+			</form>
+			</tr>
+			<%
+		}
+		%>
+		<tr class="bold"><td></td><td></td><td></td><td>Total</td><td><%= (double)Math.round(total * 100) / 100 %> &euro;</td></tr>
+		</table>
+		<form id="botonRealizar" method="POST" action="<%= application.getContextPath() %>/carrito">
+			<input type="submit" class="botonVerde" value="Realizar Pedido">
+		</form>
+		<%		
+	}else{
+		%></table><%
+	}
+%>
+

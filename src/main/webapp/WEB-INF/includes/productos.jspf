@@ -1,0 +1,22 @@
+<%@page import="org.apache.jasper.tagplugins.jstl.core.ForEach"%>
+<%@page import="java.util.Vector"%>
+<%@page import="beans.ProductoBean"%>
+
+<% 
+	Vector<ProductoBean> productosPorFamilia =(Vector<ProductoBean>)request.getAttribute("productos");
+	for(ProductoBean producto : productosPorFamilia){
+%>
+		<form method="POST" action="">
+			<div class="producto">
+				<input type="hidden" name="COD_PRO" value="<%= producto.getCod_pro() %>">
+				<input type="hidden" name="accion" value="addProduct">
+				<div class="nombre"><%= producto.getNombre() %></div>
+				<div class="precio"><%= producto.getPrecio() %>&euro;</div>
+				<div class="cantidad"><input type="text" name="CANTIDAD" size="1" maxlength="5" value="1"></div>
+				<div class="carrito"><input type="image" src="<%= application.getContextPath() %>/images/icono_carrito.png" ></div>
+				<div class="images"><img src="<%= application.getContextPath() %>/imagenes_productos/<%= producto.getUrl_foto() %>.jpg"></div>
+			</div>
+		</form>	
+<%
+	}
+%>

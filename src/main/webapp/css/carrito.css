@@ -1,0 +1,82 @@
+/******************** TABLE *************************/
+
+
+#contenidoCarrito table {
+	width: 100%;
+	float:left;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px; 
+	border-radius:5px;
+	-moz-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+	-webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+}
+	
+#contenidoCarrito th,#contenidoCarrito td {
+	padding:12px 13px; 
+	text-align:center; 
+}
+	
+#contenidoCarrito th {
+	color: #FFF;
+	background: #34530C;
+	font-weight: bold;
+}
+/*td {
+	border-bottom:1px solid #e0e0e0;
+}
+*/
+#contenidoCarrito tr:nth-child(odd){
+	background:#EEEEEE;
+}
+  
+#contenidoCarrito tr:nth-child(even){
+	background:#fefefe;
+}
+
+/******** DATOS CLIENTE ***************/
+#datosCliente{
+	float: right;
+	width: 290px;
+	padding: 10px;
+	margin-right: 16px;
+	color: #FFF;
+	background: #8A1212;
+	line-height: 1.3em;
+}
+#datosCliente ul li{
+	margin-bottom: 10px;
+}
+
+/* CARRITO
+------------------------------------------------*/
+#contenidoCarrito h3{
+	width: 310px;
+	padding: 12px 0;
+	margin-right: 16px;
+	float: right;
+	text-align: center;
+	background: #530000;
+	font-weight: bold;
+	color: #FFF;
+}
+#contenidoCarrito table tr td{
+	vertical-align: middle;
+}
+#contenidoCarrito table tr td.textleft{
+	text-align: left !important;
+}
+#contenidoCarrito table tr td img{
+	width: 130px;
+	height: auto;
+}
+
+
+#contenidoCarrito form#botonRealizar{
+	display: none;
+}
+
+#carroTabla{
+	float: left;
+	width : 600px;
+	margin-left: 16px;
+}

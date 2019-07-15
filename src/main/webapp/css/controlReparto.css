@@ -1,0 +1,136 @@
+#pedidosControlReparto{
+	width: 335px;
+	min-height : 450px;
+	background: rgba(0, 0, 0, 0.39);
+	float:left;
+	margin: 0 2px 0 16px;
+}
+#ticketsControlReparto{
+	width: 335px;
+	min-height : 450px;
+	margin: 0 2px 0 0px;
+	background: rgba(0, 0, 0, 0.39);
+	float:left;
+}
+#repartidoresControlReparto{
+	width: 254px;
+	min-height : 450px;
+	background: rgba(0, 0, 0, 0.39);
+	margin: 0px 2px 0 0px;
+	float:left;
+}
+
+
+#pedidosControlReparto h2, #ticketsControlReparto h2, #repartidoresControlReparto h2{
+	border-bottom: 2px rgba(124, 96, 60, 1) solid;
+	padding: 10px;
+	font-weight: bold;
+	color: #FFF;
+	background: #34530C;
+}
+/* MENSAJES */
+
+
+#mensajesControlReparto h2{
+	background: #8A1212;
+	margin: 0 16px 16px 16px;
+	padding: 8px;
+	text-align: center;
+	color: #FFF;
+}
+
+/************  PEDIDOS CONTROL REPARTO  ***********/
+.ck-button, .disable{
+    margin:5px 5px 0px;
+    background-color:#E7DFB1;
+    border-radius:4px;
+    overflow:auto;
+    float:left;
+}
+
+.ck-button:hover{
+    background:#8A1212;
+    color: #FFF;
+    cursor: pointer;
+}
+
+.ck-button label, .disable label {
+    float:left;
+    width:325px;
+}
+
+.ck-button label span, .disable label span{
+    text-align:left;
+    padding:10px 6px;
+    display:block;
+    cursor: pointer;
+}
+
+.ck-button label input, .disable label input {
+    position:absolute;
+    top:-20px;
+     cursor: pointer;
+}
+
+.ck-button input:checked + span {
+	background: #34530C;
+	color: #FFF;
+}
+
+
+/************ TICKETS CONTROL REPARTO  ***********/
+#ticketsControlReparto li{
+    background-color:#E7DFB1;
+    border-radius:4px;
+    float:left;
+    width:313px;
+    margin:5px 5px 0px;
+    text-align:left;
+    padding:10px 6px;
+}
+
+
+/********** REPARTIDORES CONTROL REPARTO  *************/
+#repartidoresControlReparto .button{
+	background-color:#E7DFB1;
+    border-radius:4px;
+    float:left;
+    width:190px;
+    margin:5px 5px 0px;
+    text-align:left;
+    padding:10px 6px;
+    overflow: hidden;
+}
+
+#repartidoresControlReparto .button:hover{
+    background:#8A1212;
+    color: #FFF;
+    cursor: pointer;
+}
+
+#repartidoresControlReparto .vuelta{
+	float:left;
+    color: #FFF;
+    cursor: pointer;
+    border-radius:4px;
+    margin:5px 1px 0px;
+    text-align:left;
+    overflow: hidden;
+    display: block;
+    width: 36px;
+    height: 36px;
+    background: url("../../images/vuelta.png") no-repeat;
+    background:#8A1212;
+}
+#repartidoresControlReparto .vuelta:hover{
+	background-color:#34530C;
+}
+
+
+/* DISABLE */
+.disable{
+	background: #FFFCEA !important;
+	color: #E9C75B !important;
+	cursor: default !important;
+}
+

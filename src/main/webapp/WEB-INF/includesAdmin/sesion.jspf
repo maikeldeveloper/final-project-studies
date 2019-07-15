@@ -1,0 +1,6 @@
+<div id="sessionAdmin">
+	<form method="POST" action=" <%= application.getContextPath() %>/admin/desconectar">
+		<label>Session: <%= request.getAttribute("nombreEncargado") %></label>
+		<input type="submit" class="botonVerdePeque" value="Cerrar Sesion">
+	</form>
+</div>

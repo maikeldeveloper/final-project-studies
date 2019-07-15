@@ -1,0 +1,15 @@
+<%@page import="org.apache.jasper.tagplugins.jstl.core.ForEach"%>
+<%@page import="java.util.Vector"%>
+<%@page import="beans.ClienteBean"%>
+
+<%
+	ClienteBean cliente = (ClienteBean)session.getAttribute("CLIENTE");
+%>
+<ul>
+	<li>Nombre: <%= cliente.getNombre() %> <%= cliente.getApellidos() %></li>
+	<li>Telefono: <%= cliente.getTelefono() %></li>
+	<li>Direccion: <%= cliente.getDireccion() %> Numero:<%= cliente.getNumero() %> </li>
+	<li>Escalera:<%= cliente.getEscalera()  %> Piso:<%= cliente.getPiso()  %> Letra:<%= cliente.getLetra()  %></li>
+	<li>Codigo Postal:<%= cliente.getCod_postal()  %></li>
+	<li></li>
+</ul>

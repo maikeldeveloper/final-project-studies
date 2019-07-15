@@ -1,0 +1,20 @@
+
+<%@page import="java.util.Vector"%>
+<%@page import="beans.FamiliaProductoBean"%>
+<ul>
+<%
+	Vector<FamiliaProductoBean> menuPagina = (Vector<FamiliaProductoBean>)request.getAttribute("menuFamilia");
+	for (FamiliaProductoBean nombre : menuPagina) {
+		if(nombre.getNombreFamilia().compareToIgnoreCase((String)request.getAttribute("familiaSeleccionada")) == 0){
+			%>
+			<li><a id="seleccionado" href="<%=application.getContextPath()%>/<%= nombre.getNombreFamilia() %>"><%= nombre.getNombreFamilia() %></a></li>	
+			<%
+		}else{
+    		%>
+			<li><a href="<%=application.getContextPath()%>/<%= nombre.getNombreFamilia() %>"><%= nombre.getNombreFamilia() %></a></li>
+    		<%
+		}
+    } 
+%>
+</ul>
+
